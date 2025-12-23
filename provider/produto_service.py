@@ -2,7 +2,7 @@
 ProdutoService - gerencia as operações com produtos na memória de forma simpls
 """
 
-from produto import Produto
+from .produto import Produto
 
 class ProdutoService:
     
