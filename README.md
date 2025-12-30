@@ -170,7 +170,7 @@ Daniel Soares
 
 Lana Ramos
 
-Maycon Victor
+Maycon Vyctor
 
 Samuel Fogaça
 
