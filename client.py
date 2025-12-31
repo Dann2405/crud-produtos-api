@@ -70,9 +70,9 @@ if __name__ == "__main__":
     cliente = ClienteProduto()
     # Criar alguns produtos
     print("Criando produtos...")
-    cliente.criar_produto("PROD001", "Notebook Dell", 3500.00, 10)
-    cliente.criar_produto("PROD002", "Mouse Logitech", 150.00, 50)
-    cliente.criar_produto("PROD003", "Teclado Mecânico", 450.00, 30)
+    cliente.criar_produto("PRODUTO001", "Notebook Dell", 3500.00, 10)
+    cliente.criar_produto("PRODUTO002", "Mouse Logitech", 150.00, 50)
+    cliente.criar_produto("PRODUTO003", "Teclado Mecânico", 450.00, 30)
 
     print("\n")
     # Listar todos
