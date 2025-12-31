@@ -14,12 +14,17 @@ Os dados são mantidos **em memória**, sendo ideais para fins **didáticos**, e
 
 ```
 .
-├── client.py              # Cliente HTTP para consumir a API
-├── cli.py                 # Interface de linha de comando
-├── ws_provider.py         # Servidor HTTP (API REST)
-└── provider/
-    ├── produto.py         # Classe Produto (modelo)
-    └── produto_service.py # Serviço de regras de negócio
+├── provider/
+│   ├── __init__.py
+│   ├── produto.py         # Entidade/Modelo (Product entity)
+│   └── produto_service.py # Camada de negócio (Business logic layer)
+├── client.py              # Cliente HTTP (HTTP client)
+├── cli.py                 # Interface CLI (Command-line interface)
+├── ws_provider.py         # Servidor API REST (REST API server)
+├── test_produto.py        # Testes unitários (Unit tests)
+├── popular_produtos.py    # Script de população (Data seeding script)
+├── .gitignore
+└── README.md
 ```
 
 ---
@@ -107,42 +112,76 @@ Permite:
 
 ---
 
-## Como Executar
+### Pré-requisitos
 
-### 1️ Executar o servidor web
+```bash
+# Python 3.8 ou superior
+python --version
 
+# Instalar biblioteca requests
+pip install requests
+```
+
+---
+
+### Fluxo de execução recomendado
+
+#### **Passo 1: Executar testes**
+
+Validar implementação antes de usar:
+
+```bash
+python test_produto.py
+```
+
+Aguarde confirmação: `Total: 3/3 passaram`
+
+---
+
+#### **Passo 2: Iniciar servidor API**
+
+**Terminal 1:**
 ```bash
 python ws_provider.py
 ```
 
+**Saída esperada:**
+```
+Servidor iniciado em http://127.0.0.1:8081
+```
+
+⚠️ **Mantenha este terminal aberto!**
+
 ---
 
-### 2️ Usar o cliente HTTP
+#### **Passo 3: Testar no navegador**
 
+Acesse: `http://127.0.0.1:8081/produtos`
+
+Você verá a lista de produtos em JSON.
+
+---
+
+#### **Passo 4: Usar cliente HTTP (opcional)**
+
+**Terminal 2:**
 ```bash
 python client.py
 ```
 
+Edite o arquivo para testar operações específicas. Por padrão ele vai criar uma lista de produtos que será exibido em: `http://127.0.0.1:8081/produtos` 
+(OBS: recomenda-se dar F5 para atualizar a pagina apos rodar client.py) 
+
 ---
 
-### 3️ Usar a interface CLI
+#### **Passo 5: Usar CLI (alternativa)**
 
+**Terminal 2:**
 ```bash
 python cli.py
 ```
 
----
-
-## Requisitos
-
-* Python 3.8+
-* Biblioteca `requests`
-
-Instalação:
-
-```bash
-pip install requests
-```
+⚠️ **Atenção:** CLI usa instância separada do service (dados não compartilhados com API).
 
 ---
 
