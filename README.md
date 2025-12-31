@@ -154,7 +154,18 @@ Servidor iniciado em http://127.0.0.1:8081
 
 ---
 
-#### **Passo 3: Testar no navegador**
+#### **Passo 3: Popular com dados de teste**
+
+**Terminal 2:**
+```bash
+python popular_produtos.py
+```
+
+Isso criará 8 produtos via API.
+
+---
+
+#### **Passo 4: Testar no navegador**
 
 Acesse: `http://127.0.0.1:8081/produtos`
 
@@ -162,19 +173,18 @@ Você verá a lista de produtos em JSON.
 
 ---
 
-#### **Passo 4: Usar cliente HTTP (opcional)**
+#### **Passo 5: Usar cliente HTTP (opcional)**
 
 **Terminal 2:**
 ```bash
 python client.py
 ```
 
-Edite o arquivo para testar operações específicas. Por padrão ele vai criar uma lista de produtos que será exibido em: `http://127.0.0.1:8081/produtos` 
-(OBS: recomenda-se dar F5 para atualizar a pagina apos rodar client.py) 
+Edite o arquivo para testar operações específicas.
 
 ---
 
-#### **Passo 5: Usar CLI (alternativa)**
+#### **Passo 6: Usar CLI (alternativa)**
 
 **Terminal 2:**
 ```bash
